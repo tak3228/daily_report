@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  def index
+	def index
 		require "date"
 		youbi = %w[日 月 火 水 木 金 土]
 		d = Date.today
@@ -10,8 +10,21 @@ class ReportsController < ApplicationController
 		@working_time = @work_time - 1
 		@today = Time.now.strftime('%Y-%m-%d')
 		@end   = Time.now.strftime('%H')
-		@time  = '10:00-' + @end + ':00' 
+		@time  = '10:00-' + @end + ':00'
+		#@report = Report.find_by(id: 1).body
 
 
-  end
+	end
+
+
+	def update
+		@message.update(report_params)
+		redirect_to root_path , notice: '編集しました '
+	end
+
+	private
+	def report_params
+		params.require(:report).permit(:body)
+	end
+
 end
