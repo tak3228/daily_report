@@ -10,7 +10,12 @@ class ReportsController < ApplicationController
 		@working_time = @work_time - 1
 		@today = Time.now.strftime('%Y-%m-%d')
 		@end   = Time.now.strftime('%H')
-		@time  = '10:00-' + @end + ':00'
+		@end_minit = Time.now.strftime('%M').to_i
+		if @end_minit.to_i > 30
+			@time  = '10:00-' + @end + ':30'
+		else
+			@time  = '10:00-' + @end + ':00'
+		end
 		#@report = Report.find_by(id: 1).body
 	end
 
