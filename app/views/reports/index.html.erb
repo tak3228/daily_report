@@ -1,3 +1,26 @@
+<div class="form">
+	<form action="#" id="form1">
+		<input type="text" name="word">
+		<input type="submit" value="表示">
+	</form>
+	<form action="#" id="form2">
+		<input type="text" name="word">
+		<input type="submit" value="表示">
+	</form>
+	<form action="#" id="form3">
+		<input type="text" name="word">
+		<input type="submit" value="表示">
+	</form>
+	<form action="#" id="form4">
+		<input type="text" name="word">
+		<input type="submit" value="表示">
+	</form>
+	<form action="#" id="form5">
+		<input type="text" name="word">
+		<input type="submit" value="表示">
+	</form>
+</div>
+
 <div>
 	*勤務時間:<br>
 	<%= @today %>
@@ -5,10 +28,45 @@
 	<%= @time %>
 	(<%= @work_time %>h)<br>
 	実働(<%= @working_time %>h)<br>
-	*作業内容:<br><br>
-	#
-	<br><br>
+	*作業内容:
+	<!--表示される場所-->
+	<p id="output1"></p>
+	<p id="output2"></p>
+	<p id="output3"></p>
+	<p id="output4"></p>
+	<p id="output5"></p>
+
 	-------------
 </div>
-
-
+<script>
+document.getElementById('form1').onsubmit = function() {
+	var	display1 = document.getElementById('form1').word.value;
+	document.getElementById('output1').textContent = ''+ display1 +''
+	;
+	return false;
+};
+document.getElementById('form2').onsubmit = function() {
+	var	display2 = document.getElementById('form2').word.value;
+	document.getElementById('output2').textContent = ''+ display2 +''
+	;
+	return false;
+};
+document.getElementById('form3').onsubmit = function() {
+	var	display3 = document.getElementById('form3').word.value;
+	document.getElementById('output3').textContent = ''+ display3 +''
+	;
+	return false;
+};
+document.getElementById('form4').onsubmit = function() {
+	var	display4 = document.getElementById('form4').word.value;
+	document.getElementById('output4').textContent = ''+ display4 +''
+	;
+	return false;
+};
+document.getElementById('form5').onsubmit = function() {
+	var	display5 = document.getElementById('form5').word.value;
+	document.getElementById('output5').textContent = ''+ display5 +''
+	;
+	return false;
+};
+</script>

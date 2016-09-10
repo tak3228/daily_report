@@ -12,8 +12,6 @@ class ReportsController < ApplicationController
 		@end   = Time.now.strftime('%H')
 		@time  = '10:00-' + @end + ':00'
 		#@report = Report.find_by(id: 1).body
-
-
 	end
 
 
