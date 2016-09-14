@@ -1,6 +1,6 @@
 <div class="form">
 	<form action="#" id="form1">
-		<lavel>作業1:<input type="text" name="word" value="プロジェクト:作業内容。1h"></lavel>
+		<lavel>作業1:<input type="text" name="word" placeholder="プロジェクト:作業内容。1h"></lavel>
 		<input type="submit" value="表示">
 	</form>
 	<form action="#" id="form2">
@@ -29,6 +29,7 @@
 	(<%= @work_time %>h)<br>
 	実働(<%= @working_time %>h)<br>
 	*作業内容:
+	<br>
 	<!--表示される場所-->
 	<p id="output1"></p>
 	<p id="output2"></p>
